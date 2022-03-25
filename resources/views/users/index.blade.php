@@ -39,6 +39,19 @@
                 <td>
             </tr>
             @endforeach
+            @foreach($infomation as $info)
+            <ul>
+                <li>
+                    {{ $info->id }}
+                </li>
+                <li>
+                    {{ $info->description }}
+                </li>
+                <li>
+                    {{ $info->created_at }}
+                </li>
+            </ul>
+            @endforeach
         </tbody>
         <tfoot>
             <tr>
