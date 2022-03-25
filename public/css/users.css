@@ -1,0 +1,16 @@
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border: solid 1px #ccc;
+  padding: 0.2em 0.5em;
+}
+
+td form {
+  display: inline-block;
+}
+
+tfoot td {
+  text-align: center;
+}
