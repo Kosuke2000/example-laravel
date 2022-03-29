@@ -39,6 +39,7 @@
                 <td>
             </tr>
             @endforeach
+
         </tbody>
         <tfoot>
             <tr>
@@ -48,6 +49,19 @@
             </tr>
         </tfoot>
     </table>
+    @foreach($infomation as $info)
+    <ul>
+        <li>
+            {{ $info->id }}
+        </li>
+        <li>
+            {{ $info->description }}
+        </li>
+        <li>
+            {{ $info->created_at }}
+        </li>
+    </ul>
+    @endforeach
 </body>
 
 </html>
