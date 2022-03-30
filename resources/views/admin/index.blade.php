@@ -22,14 +22,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($$infomation as $info)
+            @foreach($infomation as $info)
             <tr>
                 <td>{{ $info->id }}</td>
-                <td>{{ $info->description }}</td>
                 <td>{{ $info->created_at }}</td>
+                <td>{{ $info->description }}</td>
                 <td>
-                    <button>編集</button>
-                    <form>
+                    <button type="button" onclick="location.href = `{{ route('admin.edit', ['id' => $info->id]) }}`">編集</button>
+                    <form action="{{ route('admin.destroy', ['id' => $info->id]) }}" method="post" onsubmit="return window.confirm('お知らせ{{ $info->id }}を削除してよろしいですか？')">
                         @csrf
                         @method('DELETE')
                         <button type="submit">削除</button>
@@ -41,7 +41,7 @@
         <tfoot>
             <tr>
                 <td colspan="4">
-                    <button>新規作成</button>
+                    <button type="button" onclick="location.href = `{{ route('admin.create') }}`">新規作成</button>
                 </td>
             </tr>
         </tfoot>

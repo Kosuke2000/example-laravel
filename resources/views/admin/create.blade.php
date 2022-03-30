@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <a>一覧へ戻る</a>
-    <form method="post">
+    <a href="{{ route('admin.index') }}">一覧へ戻る</a>
+    <form action="{{ route('admin.store') }}" method="post">
         <table>
             <thead>
                 <tr>
@@ -23,7 +23,7 @@
                 <tr>
                     <th>description</th>
                     <td>
-                        <input type="text" name="name" required>
+                        <input type="text" name="description" value="{{ old('description') }}" required>
                         <x-errors name="name" />
                     </td>
                 </tr>
