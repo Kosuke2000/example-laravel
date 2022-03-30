@@ -18,7 +18,11 @@ use App\Http\Controllers\LogoutController;
 */
 
 
-Route::resource('users', UserController::class);
+Route::prefix('users')
+    ->group(function () {
+        /* GET */
+        Route::get('/', [UserController::class, 'index']);
+    });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
